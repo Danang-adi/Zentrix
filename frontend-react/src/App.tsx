@@ -1,5 +1,5 @@
+//ts-ignore
 import LogoLoop from "./components/LogoLoop";
-
 import dispersion from "./assets/dispersion.png";
 import faction from "./assets/faction.png";
 import hashglobal from "./assets/hashglobal.png";

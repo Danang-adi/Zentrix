@@ -12,6 +12,11 @@
     "isolatedModules": true,
     "noEmit": true,
 
+    "allowJs": true,
+    "noImplicitAny": false,
+    "checkJs": false,
+    "esModuleInterop": true,
+
     "jsx": "react-jsx",
 
     "baseUrl": ".",
