@@ -16,10 +16,10 @@ function App() {
           <div className="relative w-full overflow-hidden h-28">
             <LogoLoop
               logos={cryptoLogos}
-              speed={60}
+              speed={100}
               direction="left"
               logoHeight={40}
-              gap={50}
+              gap={60}
               pauseOnHover
               scaleOnHover
               fadeOut
