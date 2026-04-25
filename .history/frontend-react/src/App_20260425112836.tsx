@@ -1,6 +1,5 @@
+
 import './App.css'
-import BalanceCard from './components/BalanceCard'
-import TransferForm from './components/TransferForm'
 
 function App() {
     return (

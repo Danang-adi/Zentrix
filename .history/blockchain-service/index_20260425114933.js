@@ -3,7 +3,7 @@ const { ethers } = require("ethers");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+
 app.use(express.json());
 const provider = new ethers.JsonRpcProvider("http://127.0.0.1:8545");
 

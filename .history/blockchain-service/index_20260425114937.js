@@ -5,6 +5,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.json());
 const provider = new ethers.JsonRpcProvider("http://127.0.0.1:8545");
 
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";

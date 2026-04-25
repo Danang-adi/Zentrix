@@ -1,9 +1,7 @@
 const express = require("express");
 const { ethers } = require("ethers");
-const cors = require("cors");
 
 const app = express();
-app.use(cors());
 app.use(express.json());
 const provider = new ethers.JsonRpcProvider("http://127.0.0.1:8545");
 
@@ -496,25 +494,6 @@ app.post("/transfer", async (req, res) => {
   }
 });
 
-app.get("/debug", async (req, res) => {
-  try {
-    const name = await contract.name();
-    const symbol = await contract.symbol();
-    const supply = await contract.totalSupply();
-    const balance = await contract.balanceOf(
-      "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
-    );
-
-    res.json({
-      name,
-      symbol,
-      totalSupply: ethers.formatUnits(supply, 18),
-      ownerBalance: ethers.formatUnits(balance, 18),
-    });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
 app.listen(3001, () => {
   console.log("Blockchain Service running on port 3001");
 });
