@@ -19,7 +19,7 @@ function LoopLogo() {
             logos={cryptoLogos}
             speed={60}
             direction="left"
-            logoHeight={25}
+            logoHeight={0}
             gap={40}
             pauseOnHover
             scaleOnHover

@@ -10,6 +10,8 @@ function App() {
       </div>
       <Navbar />
       <TrustedBrands />
+      
+      
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import LogoLoop from './LogoLoop';
 import Valve from "../assets/valve.png";
 import GitHub from "../assets/github.png";
-import RiotGames from "../assets/riot.png";
+
 import Steam from "../assets/steam.png";
 
 function LoopLogo() {
@@ -19,7 +19,7 @@ function LoopLogo() {
             logos={cryptoLogos}
             speed={60}
             direction="left"
-            logoHeight={25}
+            logoHeight={50}
             gap={40}
             pauseOnHover
             scaleOnHover
