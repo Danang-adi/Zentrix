@@ -1,5 +1,4 @@
 import { ArrowUpRight, MessageCircle } from "lucide-react";
-import HomeGif from "../assets/Home.gif";
 
 export default function Home() {
   return (
@@ -31,14 +30,12 @@ export default function Home() {
           <div className="mt-20 max-w-xl border-l-2 border-zinc-700 pl-6 text-zinc-700 leading-relaxed">
             Powered by modular architecture, deep-parallel execution, and built-in compliance, enabling real-time open finance onchain.
           </div>
+
         </div>
+
         {/* RIGHT SIDE */}
-        <div className="hidden lg:flex justify-center items-center ">
-          <img
-          src={HomeGif}
-          alt="Hero Animation"
-          className="w-[550px] rounded-2xl shadow-2xl ml-50 mb-40"
-          />
+        <div className="hidden lg:flex justify-center items-center">
+          <div className="w-40 h-40 bg-blue-600 rounded-sm shadow-2xl animate-pulse"></div>
         </div>
 
       </div>

@@ -33,11 +33,11 @@ export default function Home() {
           </div>
         </div>
         {/* RIGHT SIDE */}
-        <div className="hidden lg:flex justify-center items-center ">
+        <div className="hidden lg:flex justify-center items-center">
           <img
           src={HomeGif}
-          alt="Hero Animation"
-          className="w-[550px] rounded-2xl shadow-2xl ml-50 mb-40"
+              alt="Hero Animation"
+    className="w-[500px] rounded-2xl shadow-2xl"
           />
         </div>
 

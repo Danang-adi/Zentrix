@@ -4,7 +4,7 @@ import HomeGif from "../assets/Home.gif";
 export default function Home() {
   return (
     <section className="relative z-10 max-w-6xl mx-auto px-6 pt-24 min-h-screen">
-      <div className="grid lg:grid-cols-2 gap-10 items-center">
+      <div className="grid lg:grid-cols-2 gap-30 items-center">
         <div>
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg text-sm mb-8">
@@ -33,11 +33,11 @@ export default function Home() {
           </div>
         </div>
         {/* RIGHT SIDE */}
-        <div className="hidden lg:flex justify-center items-center ">
+        <div className="hidden lg:flex justify-center items-center">
           <img
           src={HomeGif}
           alt="Hero Animation"
-          className="w-[550px] rounded-2xl shadow-2xl ml-50 mb-40"
+          className="w-[550px] rounded-2xl shadow-2xl"
           />
         </div>
 

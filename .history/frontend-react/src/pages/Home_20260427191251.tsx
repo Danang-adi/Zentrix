@@ -37,7 +37,7 @@ export default function Home() {
           <img
           src={HomeGif}
           alt="Hero Animation"
-          className="w-[550px] rounded-2xl shadow-2xl ml-50 mb-40"
+          className="w-[550px] rounded-2xl shadow-2xl ml-0 mb-10"
           />
         </div>
 

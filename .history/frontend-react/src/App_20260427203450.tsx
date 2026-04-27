@@ -12,6 +12,7 @@ function App() {
       <Navbar />
       <Home />
       <TrustedBrands />
+      <Home
     </div>
   );
 }

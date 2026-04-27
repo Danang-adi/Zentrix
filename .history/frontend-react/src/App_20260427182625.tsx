@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar';
 import TrustedBrands from './pages/TrustedBrands';
-import Home from './pages/Home'; 
 
 function App() {
   
