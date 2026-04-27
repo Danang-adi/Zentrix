@@ -7,14 +7,10 @@ function App() {
   
   return (
     <div className="bg-zinc-100">
-      <section className="relative overflow-hidden">
-
-        {/* Background Grid */}
+      <section className="relative overflow-hidden">}
         <div className="absolute inset-0 flex justify-center items-start">
           <div className="grid-bg"></div>
         </div>
-
-        {/* Content Above Grid */}
         <div className="relative z-10">
           <Navbar />
           <Home />

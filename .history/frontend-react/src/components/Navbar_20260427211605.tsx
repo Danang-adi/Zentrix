@@ -2,7 +2,7 @@ import { ChevronDown, Disc, X, BrainCog } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <header className="pt-5 px-6 relative z-50 p-fixed w-full">
+    <header className="pt-5 px-6 relative z-50 ">
       <nav className="max-w-6xl mx-auto bg-white/80 backdrop-blur-md border border-white/60 shadow-md rounded-2xl px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}

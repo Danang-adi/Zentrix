@@ -7,6 +7,8 @@ function App() {
   
   return (
     <div className="bg-zinc-100">
+
+      {/* SECTION GRID */}
       <section className="relative overflow-hidden">
 
         {/* Background Grid */}

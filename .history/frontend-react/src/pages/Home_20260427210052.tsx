@@ -1,9 +1,15 @@
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import HomeGif from "../assets/Home.gif";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
+    
     <section className="relative z-10 max-w-6xl mx-auto px-6 pt-24 min-h-screen">
+        <Navbar
+      <div className="absolute inset-0 flex justify-center items-start">
+        <div className="grid-bg"></div>
+      </div>
       <div className="grid lg:grid-cols-2 gap-10 items-center">
         
         <div>
