@@ -1,17 +1,18 @@
+<<<<<<< Updated upstream
 //ts-ignore
 import LogoLoop from "./components/LogoLoop";
 import dispersion from "./assets/dispersion.png";
 import faction from "./assets/faction.png";
 import hashglobal from "./assets/hashglobal.png";
+=======
+import Navbar from './components/Navbar';
+import TrustedBrands from './pages/TrustedBrands';
+>>>>>>> Stashed changes
 
 function App() {
-  const cryptoLogos = [
-    { src: dispersion, alt: "Dispersion", href: "#" },
-    { src: faction, alt: "Faction", href: "#" },
-    { src: hashglobal, alt: "HashGlobal", href: "#" },
-  ];
-
+  
   return (
+<<<<<<< Updated upstream
     <div className="min-h-screen bg-zinc-950 text-white px-6 py-10 overflow-x-hidden">
           <div className="relative w-full overflow-hidden h-28">
             <LogoLoop
@@ -27,6 +28,17 @@ function App() {
               ariaLabel="Crypto Partners"
             />
           </div>
+=======
+
+    <div className="relative min-h-screenoverflow-hidden bg-zinc-100">
+      <div className="absolute inset-0 flex justify-center items-start">
+        <div className="grid-bg"></div>
+      </div>
+      <Navbar />
+      <TrustedBrands />
+      
+      
+>>>>>>> Stashed changes
     </div>
   );
 }
