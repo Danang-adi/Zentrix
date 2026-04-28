@@ -18,13 +18,13 @@ const features = [
     number: "3",
     title: "MODULAR. PARALLEL.",
     desc: "Built for scalable next-gen finance with ultra-fast execution.",
-    image : Steam,
+    icon: "✦",
   },
   {
     number: "4",
     title: "COMPLIANT BY DESIGN.",
     desc: "Secure infrastructure ready for institutions and builders.",
-    image : Steam,
+    icon: "⬢",
   },
 ];
 

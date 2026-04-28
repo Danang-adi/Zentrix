@@ -24,7 +24,7 @@ const features = [
     number: "4",
     title: "COMPLIANT BY DESIGN.",
     desc: "Secure infrastructure ready for institutions and builders.",
-    image : Steam,
+    icon: "⬢",
   },
 ];
 

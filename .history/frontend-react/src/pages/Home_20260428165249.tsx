@@ -3,7 +3,7 @@ import HomeGif from "../assets/Home.gif";
 
 export default function Home() {
   return (
-    <section className="relative z-10 max-w-6xl mx-auto px-6 pt-40 min-h-screen">
+    <section className="relative z-10 max-w-6xl mx-auto px-6 pt-36 min-h-screen">
       <div className="grid lg:grid-cols-2 gap-10 items-center">
         
         <div>
