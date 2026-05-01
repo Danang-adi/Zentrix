@@ -1,5 +1,6 @@
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import HomeGif from "../assets/Home.gif";
+import TextType from "../components/TextType";
 
 export default function Home() {
   return (
@@ -30,7 +31,18 @@ export default function Home() {
           </div>
           {/* Description */}
           <div className="mt-20 max-w-xl border-l-2 border-zinc-700 pl-6 text-zinc-700 leading-relaxed">
-            Powered by modular architecture, deep-parallel execution, and built-in compliance, enabling real-time open finance onchain.
+            <TextType 
+              text={["Powered by modular architecture, deep-parallel execution, and built-in compliance, enabling real-time open finance onchain."]}
+              typingSpeed={75}
+              pauseDuration={5000}
+              showCursor
+              cursorCharacter="_"
+              deletingSpeed={50}
+              variableSpeedEnabled={false}
+              variableSpeedMin={10}
+              variableSpeedMax={300}
+              cursorBlinkDuration={0.5}
+            />
           </div>
         </div>
         {/* RIGHT SIDE */}

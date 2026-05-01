@@ -1,4 +1,5 @@
 import { ChevronDown, Disc, X, BrainCog } from "lucide-react";
+import TextType from './TextType';
 
 export default function Navbar() {
   return (
