@@ -2,8 +2,6 @@ import Navbar from './components/Navbar';
 import TrustedBrands from './pages/TrustedBrands';
 import Home from './pages/Home'; 
 import Feature from './pages/Feature';
-import Blog from './pages/Blog';
-import Footer from './pages/Footer';
 
 function App() {
   
@@ -29,8 +27,8 @@ function App() {
       <section className="bg-white relative">
         <Feature />
       </section>
-      <Blog />
-      <Footer />
+      
+
     </div>
   );
 }

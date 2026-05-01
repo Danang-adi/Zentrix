@@ -19,13 +19,14 @@ export default function Home() {
           {/* Button */}
           <div className="mt-10">
             <button className="flex items-center gap-3 bg-white shadow-md hover:shadow-lg px-5 py-3 rounded-xl transition">
-                <MessageCircle size={18} />
-                <span className="font-medium">
-                  Join Community
-                </span>
-                <div className="bg-blue-600 text-white p-2 rounded-lg">
-                  <ArrowUpRight size={16} />
-                </div>
+              <a href="https://discord.gg/9ujhx8av">
+              <MessageCircle size={18} />
+              <span className="font-medium">
+                Join Community
+              </span>
+              <div className="bg-blue-600 text-white p-2 rounded-lg">
+                <ArrowUpRight size={16} />
+              </div></a>
             </button>
           </div>
           {/* Description */}
