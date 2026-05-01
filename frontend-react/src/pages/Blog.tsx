@@ -36,24 +36,20 @@ export default function Blog() {
   const [displayBlogs, setDisplayBlogs] = useState(initialBlogs);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Mencegah konflik drag jika animasi tombol panah sedang berjalan
   const isAnimatingRef = useRef(false);
 
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeftPos, setScrollLeftPos] = useState(0);
 
-  // --- LOGIKA UTAMA: FREE SCROLL & DETEKSI TENGAH ---
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
 
-    // Infinite Scroll (Gandakan array saat mendekati ujung)
     if (scrollLeft + clientWidth >= scrollWidth - 800) {
       setDisplayBlogs((prev) => [...prev, ...initialBlogs]);
     }
 
-    // Deteksi Kartu Mana yang Ada di Tengah secara Real-time
     const containerCenter = scrollLeft + clientWidth / 2;
     const cards = scrollRef.current.querySelectorAll('.blog-card');
     
@@ -62,7 +58,6 @@ export default function Blog() {
 
     cards.forEach((card, index) => {
       const cardElement = card as HTMLElement;
-      // Ambil titik tengah dari masing-masing card
       const cardCenter = cardElement.offsetLeft + cardElement.offsetWidth / 2;
       const distance = Math.abs(containerCenter - cardCenter);
 
@@ -72,13 +67,11 @@ export default function Blog() {
       }
     });
 
-    // Update kartu yang aktif (menyala) tanpa memaksa scroll
     if (closestIndex !== activeIndex) {
       setActiveIndex(closestIndex);
     }
   };
 
-  // --- LOGIKA ANIMASI SNAP KHUSUS TOMBOL PANAH ---
   const scrollToIndex = (index: number) => {
     if (!scrollRef.current) return;
     const cards = scrollRef.current.querySelectorAll('.blog-card');
@@ -87,7 +80,6 @@ export default function Blog() {
     const container = scrollRef.current;
     const card = cards[index] as HTMLElement;
 
-    // Kalkulasi jarak agar card ini berada persis di tengah
     const targetScroll = card.offsetLeft - (container.clientWidth / 2) + (card.offsetWidth / 2);
 
     isAnimatingRef.current = true; 
@@ -111,7 +103,6 @@ export default function Blog() {
     scrollToIndex(newIndex);
   };
 
-  // --- LOGIKA MOUSE DRAG NATIVE (FREE DRAG) ---
   const handleMouseDown = (e: MouseEvent) => {
     if (isAnimatingRef.current) return; 
     setIsDragging(true);
@@ -120,15 +111,8 @@ export default function Blog() {
     setScrollLeftPos(scrollRef.current.scrollLeft);
   };
 
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-    // Auto-snap dihapus dari sini
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    // Auto-snap dihapus dari sini
-  };
+  const handleMouseLeave = () => setIsDragging(false);
+  const handleMouseUp = () => setIsDragging(false);
 
   const handleMouseMove = (e: MouseEvent) => {
     if (!isDragging || !scrollRef.current) return;
@@ -139,10 +123,10 @@ export default function Blog() {
   };
 
   return (
-    <section className="shadow-lg hover:shadow-blue-500/30 transition bg-blue-700 py-20 px-6 text-white relative overflow-hidden">
+    <section className="bg-blue-700 py-12 text-white relative overflow-hidden shadow-lg">
       
-      <div className="max-w-6xl mx-auto flex justify-between items-center mb-10">
-        <h2 className="text-3xl font-bold">Real Finance. Real Participation</h2>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center mb-6 gap-4 px-6 md:px-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">Real Finance. Real Participation</h2>
         <div className="flex gap-3">
           <button 
             onClick={() => scroll("left")} 
@@ -169,16 +153,16 @@ export default function Blog() {
         className={`overflow-x-auto overflow-y-hidden no-scrollbar ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        <div className="flex gap-6 w-max items-stretch pb-10 pt-4 px-[calc(50vw-200px)] md:px-[calc(50vw-250px)]">
+        <div className="flex gap-6 w-max items-stretch pb-10 pt-4 px-[calc(50vw-200px)] md:px-[calc(50vw-225px)]">
           
           {displayBlogs.map((item, index) => (
             <div
               key={`blog-${index}`}
-              className={`blog-card w-[400px] md:w-[500px] shrink-0 flex flex-col bg-white text-black rounded-2xl overflow-hidden transition-all duration-500 select-none
-                ${activeIndex === index ? "opacity-100 shadow-2xl" : "opacity-40 shadow-md"}
+              className={`blog-card w-[400px] md:w-[450px] shrink-0 flex flex-col bg-white text-black rounded-2xl overflow-hidden transition-all duration-500 select-none
+                ${activeIndex === index ? "opacity-100 shadow-2xl scale-100" : "opacity-40 shadow-md"}
               `}
             >
-              <div className="h-64 bg-black shrink-0 pointer-events-none">
+              <div className="h-48 md:h-52 bg-black shrink-0 pointer-events-none">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -187,9 +171,9 @@ export default function Blog() {
                 />
               </div>
 
-              <div className="p-10 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-base text-zinc-600 leading-relaxed flex-grow">
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-sm md:text-base text-zinc-600 leading-relaxed flex-grow">
                   {item.desc}
                 </p>
               </div>
