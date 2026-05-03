@@ -37,6 +37,7 @@ export default function FeatureCard({
       `}
     >
 
+
       {/* Glow aktif */}
       {isInView && (
         <div className="absolute inset-0 rounded-2xl bg-blue-500/10 blur-xl" />

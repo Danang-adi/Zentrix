@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import LogoLoop from "./LogoLoop";
+import React from 'react'
+import LogoLoop from './LogoLoop';
 import Valve from "../assets/valve.png";
 import GitHub from "../assets/github.png";
 import RiotGames from "../assets/riot.png";
 import Steam from "../assets/steam.png";
+
+import { useEffect, useState } from "react";
 
 function LoopLogo() {
   const cryptoLogos = [
@@ -12,12 +14,10 @@ function LoopLogo() {
     { src: GitHub, alt: "GitHub", href: "https://github.com/" },
     { src: RiotGames, alt: "Riot Games", href: "https://www.riotgames.com/" },
   ];
-
   const [logoSize, setLogoSize] = useState(20);
   const [gap, setGap] = useState(24);
 
-  useEffect(() => {
-    const updateSize = () => {
+      const updateSize = () => {
       if (window.innerWidth < 640) {
         setLogoSize(20);
         setGap(24);
@@ -30,27 +30,27 @@ function LoopLogo() {
       }
     };
 
-    updateSize(); // run pertama
-
+    updateSize();
     window.addEventListener("resize", updateSize);
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden h-16 sm:h-20 md:h-24 opacity-80">
-      <LogoLoop
-        logos={cryptoLogos}
-        speed={50}
-        direction="left"
-        logoHeight={logoSize}
-        gap={gap}
-        pauseOnHover
-        scaleOnHover
-        fadeOut
-        fadeOutColor="#09090b"
-      />
+    <div className="relative w-full overflow-hidden h-20 opacity-80">
+        <LogoLoop
+            logos={cryptoLogos}
+            speed={60}
+            direction="left"
+            logoHeight={25}
+            gap={40}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            fadeOutColor="#09090b"
+            ariaLabel="Crypto Partners"
+        />
     </div>
-  );
+  )
 }
 
 export default LoopLogo;

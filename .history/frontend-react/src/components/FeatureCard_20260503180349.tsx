@@ -36,6 +36,7 @@ export default function FeatureCard({
         }
       `}
     >
+      
 
       {/* Glow aktif */}
       {isInView && (

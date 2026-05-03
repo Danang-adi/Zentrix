@@ -43,12 +43,12 @@ export default function Blog() {
   const [startX, setStartX] = useState(0);
   const [scrollLeftPos, setScrollLeftPos] = useState(0);
 
-  // AUTO CENTER FIRST CARD
+  // 🔥 AUTO CENTER FIRST CARD
   useEffect(() => {
     setTimeout(() => scrollToIndex(0), 100);
   }, []);
 
-  // DETECT ACTIVE CARD
+  // 🔥 DETECT ACTIVE CARD
   const handleScroll = () => {
     if (!scrollRef.current) return;
 
@@ -81,10 +81,9 @@ export default function Blog() {
     }
   };
 
-  // SCROLL TO CARD
+  // 🔥 SCROLL TO CARD
   const scrollToIndex = (index: number) => {
     if (!scrollRef.current) return;
-
     const cards = scrollRef.current.querySelectorAll(".blog-card");
     if (!cards[index]) return;
 
@@ -120,7 +119,7 @@ export default function Blog() {
     scrollToIndex(newIndex);
   };
 
-  // MOUSE DRAG
+  // 🔥 MOUSE DRAG
   const handleMouseDown = (e: MouseEvent) => {
     if (isAnimatingRef.current) return;
     setIsDragging(true);
@@ -137,7 +136,7 @@ export default function Blog() {
 
   const stopDrag = () => setIsDragging(false);
 
-  // TOUCH (mobile)
+  // 🔥 TOUCH SUPPORT (MOBILE FIX)
   const handleTouchStart = (e: React.TouchEvent) => {
     if (!scrollRef.current) return;
     setIsDragging(true);
@@ -152,110 +151,104 @@ export default function Blog() {
   };
 
   return (
-    <section className="relative py-14 sm:py-20 bg-gradient-to-b from-blue-700 via-blue-800 to-blue-900 overflow-hidden">
+    <section className="relative py-12 sm:py-16 text-white overflow-hidden bg-gradient-to-b from-blue-700 via-blue-800 to-blue-900">
 
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.05] 
-        bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] 
-        bg-[size:40px_40px]" />
+      {/* GRID */}
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-      <div className="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] bg-blue-400/30 blur-[120px] rounded-full pointer-events-none z-0" />
-      <div className="absolute bottom-[-120px] right-[-120px] w-[350px] h-[350px] bg-purple-500/30 blur-[120px] rounded-full pointer-events-none z-0" />
+      {/* GLOW */}
+      <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-blue-400/30 rounded-full blur-[120px] " />
+      <div className="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-purple-500/30 rounded-full blur-[120px]" />
 
-      <div className="absolute inset-0 bg-black/10 pointer-events-none z-0" />
+      {/* OVERLAY */}
+      <div className="absolute inset-0 bg-black/10" />
 
-      {/* CONTENT */}
-      <div className="relative z-0">
+      {/* HEADER */}
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center mb-8 gap-4 px-4 sm:px-6">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center md:text-left">
+          Real Finance. Real Participation
+        </h2>
 
-        {/* HEADER */}
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center mb-10 gap-4 px-4 sm:px-6">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center md:text-left">
-            Real Finance. Real Participation
-          </h2>
+        <div className="flex gap-3">
+          <button
+            onClick={() => scroll("left")}
+            className="bg-white text-black p-2 sm:p-3 rounded-lg hover:bg-gray-200"
+          >
+            <ArrowLeft size={18} />
+          </button>
 
-          <div className="flex gap-3">
-            <button
-              onClick={() => scroll("left")}
-              className="bg-white text-black p-2 sm:p-3 rounded-lg hover:bg-gray-200 transition"
-            >
-              <ArrowLeft size={18} />
-            </button>
-
-            <button
-              onClick={() => scroll("right")}
-              className="bg-white text-black p-2 sm:p-3 rounded-lg hover:bg-gray-200 transition"
-            >
-              <ArrowRight size={18} />
-            </button>
-          </div>
+          <button
+            onClick={() => scroll("right")}
+            className="bg-white text-black p-2 sm:p-3 rounded-lg hover:bg-gray-200"
+          >
+            <ArrowRight size={18} />
+          </button>
         </div>
+      </div>
 
-        {/* SCROLL */}
-        <div
-          ref={scrollRef}
-          onScroll={handleScroll}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={stopDrag}
-          onMouseLeave={stopDrag}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={stopDrag}
-          className={`overflow-x-auto no-scrollbar cursor-grab scroll-smooth snap-x snap-mandatory ${
-            isDragging ? "cursor-grabbing" : ""
-          }`}
-        >
-          <div className="flex gap-6 pb-10 px-[calc(50vw-130px)] sm:px-[calc(50vw-150px)] md:px-[calc(50vw-190px)]">
+      {/* SCROLL AREA */}
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={stopDrag}
+        onMouseLeave={stopDrag}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={stopDrag}
+        className={`overflow-x-auto overflow-y-hidden no-scrollbar cursor-grab scroll-smooth snap-x snap-mandatory ${
+          isDragging ? "cursor-grabbing" : ""
+        }`}
+      >
+        <div className="flex gap-6 px-4 sm:px-6 md:px-10 pb-10">
 
-            {displayBlogs.map((item, index) => (
-              <div
-                key={index}
-                className={`blog-card snap-center shrink-0 flex flex-col bg-white text-black rounded-2xl overflow-hidden transition-all duration-500 relative
-                w-[260px] sm:w-[300px] md:w-[380px]
-                ${
-                  activeIndex === index
-                    ? "opacity-100 scale-100 shadow-2xl z-10"
-                    : "opacity-40 scale-90 blur-[1px]"
-                }`}
-              >
+          {displayBlogs.map((item, index) => (
+            <div
+              key={index}
+              className={`blog-card snap-center shrink-0 flex flex-col bg-white text-black rounded-2xl overflow-hidden transition-all duration-500 select-none relative
+              w-[260px] sm:w-[300px] md:w-[380px]
+              ${
+                activeIndex === index
+                  ? "opacity-100 scale-100 shadow-2xl z-10"
+                  : "opacity-40 scale-90 blur-[1px]"
+              }`}
+            >
 
-                {/* ACTIVE GLOW */}
-                {activeIndex === index && (
-                  <div className="absolute inset-0 bg-blue-500/10 blur-xl rounded-2xl pointer-events-none" />
-                )}
+              {/* GLOW ACTIVE */}
+              {activeIndex === index && (
+                <div className="absolute inset-0 bg-blue-500/10 blur-xl rounded-2xl" />
+              )}
 
-                {/* IMAGE */}
-                <div className="h-40 sm:h-48 md:h-52 bg-black">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    draggable="false"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* CONTENT */}
-                <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                  <motion.h3
-                    animate={{
-                      scale: activeIndex === index ? 1 : 0.95,
-                    }}
-                    className="text-lg sm:text-xl font-bold mb-2"
-                  >
-                    {item.title}
-                  </motion.h3>
-
-                  <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-
+              {/* IMAGE */}
+              <div className="h-40 sm:h-48 md:h-52 bg-black">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  draggable="false"
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
 
-          </div>
+              {/* CONTENT */}
+              <div className="p-4 sm:p-6 flex flex-col flex-grow">
+                <motion.h3
+                  animate={{
+                    scale: activeIndex === index ? 1 : 0.95,
+                  }}
+                  className="text-lg sm:text-xl font-bold mb-2"
+                >
+                  {item.title}
+                </motion.h3>
+
+                <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+
         </div>
-
       </div>
 
       {/* HIDE SCROLLBAR */}

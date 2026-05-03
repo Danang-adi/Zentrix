@@ -1,19 +1,13 @@
 import { ChevronDown, Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  // lock scroll saat menu kebuka
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "auto";
-  }, [open]);
-
   return (
-    <header className="fixed top-0 left-0 w-full z-[999] px-4 sm:px-6 pt-4 sm:pt-5">
-
-      {/* NAVBAR */}
+    <header className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 pt-4 sm:pt-5">
+      
       <nav className="max-w-6xl mx-auto bg-white/80 backdrop-blur-md border border-white/60 shadow-md rounded-2xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
 
         {/* Logo */}
@@ -39,6 +33,7 @@ export default function Navbar() {
 
         {/* Right */}
         <div className="flex items-center gap-2 sm:gap-4">
+
           <button className="hidden sm:block bg-blue-600 text-white px-4 py-2 rounded-xl text-sm">
             Join Testnet
           </button>
@@ -50,56 +45,46 @@ export default function Navbar() {
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
-        </div>
 
+        </div>
       </nav>
 
-      {/* 🔥 FULLSCREEN MENU */}
+      {/* 🔥 Animated Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-40 bg-white/70 backdrop-blur-xl flex flex-col justify-center items-center px-6"
-            initial={{ y: "-100%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
-            exit={{ y: "-100%", opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="lg:hidden mt-3 mx-auto max-w-6xl px-4 sm:px-6"
           >
+            <div className="bg-white/90 backdrop-blur-md border border-white/60 shadow-md rounded-2xl p-6 flex flex-col gap-5 text-sm font-medium text-zinc-700">
 
-            {/* Close button */}
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute top-6 right-6"
-            >
-              <X size={28} />
-            </button>
-
-            {/* Menu Items */}
-            <div className="flex flex-col items-center gap-8 text-2xl font-medium text-zinc-900">
-
+              {/* Menu Items (animated one by one) */}
               {["Explore", "Learn", "Build"].map((item, i) => (
                 <motion.button
                   key={item}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="hover:tracking-widest transition-all duration-300"
+                  className="flex items-center justify-between"
                 >
                   {item}
+                  <ChevronDown size={16} />
                 </motion.button>
               ))}
 
-              {/* CTA */}
               <motion.button
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl text-base"
+                className="mt-2 bg-blue-600 text-white py-2 rounded-xl"
               >
                 Join Testnet
               </motion.button>
 
             </div>
-
           </motion.div>
         )}
       </AnimatePresence>

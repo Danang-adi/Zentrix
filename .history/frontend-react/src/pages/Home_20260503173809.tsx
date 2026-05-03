@@ -14,7 +14,7 @@ export default function Home() {
             <img
               src={HomeGif}
               alt="Hero Animation"
-              className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[500px] rounded-2xl shadow-2xl"
+              className="w-full max-w-[250px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[500px] rounded-2xl shadow-2xl"
             />
           </div>
 

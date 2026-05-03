@@ -5,7 +5,7 @@ const features = [
   {
     number: "1",
     title: "MODULAR. PARALLEL.",
-    desc: "Built for scalable next-gen finance with ultra-fast execution. lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eaque. lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, eaque.",
+    desc: "Built for scalable next-gen finance with ultra-fast execution.",
     image : Steam,
   },
   {

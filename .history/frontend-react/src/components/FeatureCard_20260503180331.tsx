@@ -36,6 +36,12 @@ export default function FeatureCard({
         }
       `}
     >
+<div className="fixed left-6 top-1/2 -translate-y-1/2 h-40 w-[2px] bg-zinc-200">
+  <motion.div
+    className="bg-blue-600 w-full"
+    style={{ height: scrollProgress }}
+  />
+</div>
 
       {/* Glow aktif */}
       {isInView && (

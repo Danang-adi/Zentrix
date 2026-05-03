@@ -10,16 +10,8 @@ export default function Home() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
-          <div className="flex justify-center items-center order-1 lg:order-2">
-            <img
-              src={HomeGif}
-              alt="Hero Animation"
-              className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[500px] rounded-2xl shadow-2xl"
-            />
-          </div>
-
           {/* LEFT */}
-          <div className="order-2 lg:order-1">
+          <div>
 
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-black text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm mb-6 sm:mb-8">
@@ -65,6 +57,15 @@ export default function Home() {
               />
             </div>
 
+          </div>
+
+          {/* RIGHT */}
+          <div className="flex justify-center items-center mt-10 lg:mt-0 order-2 lg:order-2">
+            <img
+              src={HomeGif}
+              alt="Hero Animation"
+              className="w-full max-w-[300px] sm:max-w-[3500px] md:max-w-[450px] lg:max-w-[500px] rounded-2xl shadow-2xl"
+            />
           </div>
 
         </div>

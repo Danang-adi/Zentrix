@@ -165,7 +165,7 @@ export default function Blog() {
       <div className="absolute inset-0 bg-black/10 pointer-events-none z-0" />
 
       {/* CONTENT */}
-      <div className="relative z-0">
+      <div className="relative z-10">
 
         {/* HEADER */}
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center mb-10 gap-4 px-4 sm:px-6">

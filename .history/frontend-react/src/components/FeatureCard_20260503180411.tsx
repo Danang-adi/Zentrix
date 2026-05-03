@@ -76,7 +76,7 @@ export default function FeatureCard({
         <p className="text-zinc-600 text-sm sm:text-base">
           {desc}
         </p>
-
+        
       </div>
     </motion.div>
   );

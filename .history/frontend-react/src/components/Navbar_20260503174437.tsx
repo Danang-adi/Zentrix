@@ -11,7 +11,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-[999] px-4 sm:px-6 pt-4 sm:pt-5">
+    <header className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 pt-4 sm:pt-5">
 
       {/* NAVBAR */}
       <nav className="max-w-6xl mx-auto bg-white/80 backdrop-blur-md border border-white/60 shadow-md rounded-2xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
@@ -58,7 +58,7 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-40 bg-white/70 backdrop-blur-xl flex flex-col justify-center items-center px-6"
+            className="fixed inset-0 z-40 bg-white flex flex-col justify-center items-center px-6"
             initial={{ y: "-100%", opacity: 0 }}
             animate={{ y: "0%", opacity: 1 }}
             exit={{ y: "-100%", opacity: 0 }}
@@ -82,7 +82,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="hover:tracking-widest transition-all duration-300"
+                  className="hover:text-blue-600 transition"
                 >
                   {item}
                 </motion.button>
