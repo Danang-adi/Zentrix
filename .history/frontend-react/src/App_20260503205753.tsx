@@ -9,7 +9,7 @@ function App() {
   
   return (
     <div className="bg-zinc-100">
-      <section className="relative overflow-hidden ">
+      <section className="relative overflow-hidden mt-20">
 
         {/* Background Grid */}
         <div className="absolute inset-0 flex justify-center items-start">
@@ -26,13 +26,10 @@ function App() {
       </section>
 
       {/* SECTION CLEAN */}
-      <section className="bg-white relative ">
+      <section className="bg-white relative">
         <Feature />
       </section>
-      <section className=' bg-white pt-28'>
-        <Blog />
-      </section>
-      
+      <Blog />
       <Footer />
     </div>
   );
