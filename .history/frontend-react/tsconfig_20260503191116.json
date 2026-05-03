@@ -19,15 +19,12 @@
 
     "jsx": "react-jsx",
 
-    "compilerOptions": {
+  "compilerOptions": {
     "baseUrl": ".",
     "ignoreDeprecations": "6.0",
     "paths": {
       "@/*": ["src/*"]
-    },
-
-    "ignoreDeprecations": "6.0"
+    }
   },
-
   "include": ["src", "src/components/LogoLoop.jsx"]
 }
