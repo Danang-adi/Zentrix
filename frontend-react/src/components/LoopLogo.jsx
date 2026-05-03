@@ -1,8 +1,8 @@
 import React from 'react'
 import LogoLoop from './LogoLoop';
 import Valve from "../assets/valve.png";
-import GitHub from "../assets/github.png";
-import RiotGames from "../assets/riot.png";
+import GitHub from "../assets/Github.png";
+import RiotGames from "../assets/Riot.png";
 import Steam from "../assets/steam.png";
 
 function LoopLogo() {
