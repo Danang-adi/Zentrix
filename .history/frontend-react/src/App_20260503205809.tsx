@@ -26,13 +26,10 @@ function App() {
       </section>
 
       {/* SECTION CLEAN */}
-      <section className="bg-white relative ">
+      <section className="bg-white relative mt-20">
         <Feature />
       </section>
-      <section className=' bg-white pt-28'>
-        <Blog />
-      </section>
-      
+      <Blog />
       <Footer />
     </div>
   );

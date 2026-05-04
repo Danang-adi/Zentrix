@@ -29,8 +29,8 @@ function App() {
       <section className="bg-white relative ">
         <Feature />
       </section>
-      <section className=' bg-white pt-28'>
-        <Blog />
+      <section className='pt-28'>
+      <Blog />
       </section>
       
       <Footer />

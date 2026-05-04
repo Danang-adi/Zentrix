@@ -128,7 +128,7 @@ export default function BlogAppleCarousel() {
 
   return (
     <section className="relative py-20 bg-gradient-to-b from-blue-700 via-blue-800 to-blue-900 overflow-hidden">
-
+z
       {/* GRID */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none 
         bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] 
